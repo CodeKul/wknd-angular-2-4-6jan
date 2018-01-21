@@ -9,6 +9,8 @@ import { LittleComponent } from './sample-ui/little.component';
 import { DatabindingComponent } from './databinding/databinding.component';
 import { CustIpComponent } from './databinding/cust-ip.component';
 import { CustOpComponent } from './databinding/cust-op.component';
+import { DirectivesComponent } from './directives/directives.component';
+import { CustSmplDirective } from './directives/cust-smpl.directive';
 
 
 
@@ -19,7 +21,9 @@ import { CustOpComponent } from './databinding/cust-op.component';
     LittleComponent,
     DatabindingComponent,
     CustIpComponent,
-    CustOpComponent
+    CustOpComponent,
+    DirectivesComponent,
+    CustSmplDirective
   ],
   imports: [
     BrowserModule,

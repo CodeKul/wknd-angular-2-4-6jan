@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Input } from '@angular/core';
+import { OnChanges } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-cust-ip',
@@ -10,7 +11,7 @@ import { Input } from '@angular/core';
   `,
   styles: []
 })
-export class CustIpComponent implements OnInit {
+export class CustIpComponent implements OnInit, OnChanges {
 
   @Input()
   alTy: string;
@@ -18,11 +19,18 @@ export class CustIpComponent implements OnInit {
   @Input()
   inf: string;
 
-  cls : string;
+  cls: string;
 
   constructor() { }
 
   ngOnInit() {
     this.cls = `alert ${this.alTy}`
+  }
+
+  ngOnChanges() {
+    if (this.alTy === 'success') this.cls = `alert alert-success`
+    else if (this.alTy === 'danger') this.cls = `alert alert-danger`
+    else if (this.alTy === 'info') this.cls = `alert alert-info`
+    else if (this.alTy === 'warning') this.cls = `alert alert-warning`
   }
 }

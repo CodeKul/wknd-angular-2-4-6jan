@@ -1,0 +1,23 @@
+<div class="row">
+  <div class="col-md-12">
+    <h5>Directives</h5>
+  </div>
+</div>
+<div [ngClass]="{jumbotron : tgl, brd : !tgl}">
+  <h1>We will make it jumbo</h1>
+  <button class="btn" (click)="tgl = !tgl">Toggle</button>
+</div>
+<div class="row">
+  <div class="col-md-12 alert" [ngStyle]="maSty">
+    <h1>This is ngStyle</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+      <!-- <input type="text" custSmpl [wd]="'200px'"> -->
+    <input 
+      type="text" 
+      [custSmpl]="{wd : '300px', brd : '1px solid blue'}" >
+  </div>  
+</div>
+   
