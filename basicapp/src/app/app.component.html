@@ -1,5 +1,19 @@
 <div class="container">
   <div class="row">
-    <app-directives></app-directives>
+    <!-- <app-lifecycle *ngIf="isLyf" [brd]="title"> 
+      <button class="btn btn-danger" >Hello</button>
+    </app-lifecycle> -->
+
+    <app-lcl-rf >
+      <input type="text" #any1Thng>
+      <input type="text" #any2Thng>
+    </app-lcl-rf> 
   </div>
+
+  <!-- <div class="row">
+    <div class="col-md-12">
+      <input type="button" class="btn" (click)="isLyf = !isLyf" value="Add / Rem">
+      <input type="button" class="btn"  value="Change IP" (click)="onChIp()">
+    </div>
+  </div> -->
 </div>

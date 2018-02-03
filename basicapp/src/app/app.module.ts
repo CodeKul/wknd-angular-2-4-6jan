@@ -11,6 +11,9 @@ import { CustIpComponent } from './databinding/cust-ip.component';
 import { CustOpComponent } from './databinding/cust-op.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { CustSmplDirective } from './directives/cust-smpl.directive';
+import { CustStrDirective } from './directives/cust-str.directive';
+import { LifecycleComponent } from './lifecycle/lifecycle.component';
+import { LclRfComponent } from './lcl-rf/lcl-rf.component';
 
 
 
@@ -23,7 +26,10 @@ import { CustSmplDirective } from './directives/cust-smpl.directive';
     CustIpComponent,
     CustOpComponent,
     DirectivesComponent,
-    CustSmplDirective
+    CustSmplDirective,
+    CustStrDirective,
+    LifecycleComponent,
+    LclRfComponent
   ],
   imports: [
     BrowserModule,

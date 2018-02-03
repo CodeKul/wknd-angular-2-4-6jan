@@ -20,4 +20,31 @@
       [custSmpl]="{wd : '300px', brd : '1px solid blue'}" >
   </div>  
 </div>
+
+<div class="row" *ngIf="isUl">
+  <div class="col-md-12">
+    <ul >
+      <li *ngFor="let lng of lngs"> {{lng}}</li>
+    </ul>
+  </div>
+</div>
+
+<ng-template [ngIf]="isUl">
+  <div class="col-md-12">
+    <ul >
+      <li *ngFor="let lng of lngs"> {{lng}}</li>
+    </ul>
+  </div>
+</ng-template>
+
+<div class="row">
+  <div class="col-md-12">
+    <input type="button" value="Okay" class="btn" (click)="isUl = !isUl">
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <h1 *cst="false">Hello</h1>
+  </div>
+</div>
    

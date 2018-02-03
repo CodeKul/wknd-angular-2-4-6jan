@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+  onChIp(str : String) {
+    this.title = new Date().toString()
+  }
 }
