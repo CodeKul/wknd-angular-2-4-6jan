@@ -1,3 +1,5 @@
+import { OtherService } from './services/other.service';
+import { DataService } from './services/data.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms'
@@ -14,6 +16,9 @@ import { CustSmplDirective } from './directives/cust-smpl.directive';
 import { CustStrDirective } from './directives/cust-str.directive';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { LclRfComponent } from './lcl-rf/lcl-rf.component';
+import { ServicesComponent } from './services/services.component';
+import { AltComponent } from './services/alt.component';
+import { BtnComponent } from './services/btn.component';
 
 
 
@@ -29,13 +34,16 @@ import { LclRfComponent } from './lcl-rf/lcl-rf.component';
     CustSmplDirective,
     CustStrDirective,
     LifecycleComponent,
-    LclRfComponent
+    LclRfComponent,
+    ServicesComponent,
+    AltComponent,
+    BtnComponent
   ],
   imports: [
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [DataService, OtherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

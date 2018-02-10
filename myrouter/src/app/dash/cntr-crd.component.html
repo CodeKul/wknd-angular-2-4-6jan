@@ -1,0 +1,12 @@
+<div class="card text-center">
+  <div class="card-header">
+    <button class="btn btn-primary" (click)="child('prf')">Profile</button>
+    <button class="btn btn-primary" (click)="child('usr')">User</button>
+  </div>
+  <div class="card-body">
+    <router-outlet></router-outlet>
+  </div>
+  <div class="card-footer text-muted">
+    2 days ago
+  </div>
+</div>

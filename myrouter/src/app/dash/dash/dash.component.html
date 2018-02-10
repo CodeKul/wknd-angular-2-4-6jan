@@ -1,0 +1,16 @@
+<div class="container">
+  <h3 class="text-muted">Codekul Dashboard for {{user}} from {{country}}</h3>
+  <hr>
+  <app-nav></app-nav>
+  <hr>
+  <app-cntr-crd></app-cntr-crd>
+  <div class="jumbotron">
+    <div class="row">
+      <input type="text" #nm>
+      <input type="button" value="Okay" (click)="callSelf(nm.value)">
+    </div>
+    <div class="row">
+      <app-crd *ngFor="let crd of cards"></app-crd>
+    </div>
+  </div>
+</div>
