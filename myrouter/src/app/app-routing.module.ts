@@ -6,16 +6,25 @@ import { LgnComponent } from './login/lgn/lgn.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { PrfComponent } from './dash/prf/prf.component';
+import { FormsComponent } from './forms/forms.component';
+import { TmpDrvnComponent } from './forms/tmp-drvn.component';
+import { DtDrvnComponent } from './forms/dt-drvn.component';
 
 const dashRoutes: Routes = [
   { path: 'prf', component: PrfComponent },
   { path: 'usr', component: UsrComponent },
 ]
+
+const frmRts = [
+  { path: 'tmp', component: TmpDrvnComponent },
+  { path: 'dt', component: DtDrvnComponent }
+]
 const routes: Routes = [
   { path: '', component: LgnComponent },
   { path: 'lgn', redirectTo: '' },
   { path: 'dash/:usNm', component: DashComponent, children: dashRoutes, canActivate: [DashGuard] },
-  { path: 'reg/:id', component: RegComponent }
+  { path: 'reg/:id', component: RegComponent },
+  { path: 'forms', component: FormsComponent, children: frmRts }
 ];
 
 @NgModule({
