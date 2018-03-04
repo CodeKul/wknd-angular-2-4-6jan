@@ -1,3 +1,4 @@
+import { HttpComponent } from './http/http.component';
 import { DashGuard } from './dash/dash.guard';
 import { UsrComponent } from './dash/usr/usr.component';
 import { RegComponent } from './reg/reg/reg.component';
@@ -9,6 +10,7 @@ import { PrfComponent } from './dash/prf/prf.component';
 import { FormsComponent } from './forms/forms.component';
 import { TmpDrvnComponent } from './forms/tmp-drvn.component';
 import { DtDrvnComponent } from './forms/dt-drvn.component';
+import { PipesComponent } from './pipes/pipes.component';
 
 const dashRoutes: Routes = [
   { path: 'prf', component: PrfComponent },
@@ -24,7 +26,10 @@ const routes: Routes = [
   { path: 'lgn', redirectTo: '' },
   { path: 'dash/:usNm', component: DashComponent, children: dashRoutes, canActivate: [DashGuard] },
   { path: 'reg/:id', component: RegComponent },
-  { path: 'forms', component: FormsComponent, children: frmRts }
+  { path: 'forms', component: FormsComponent, children: frmRts },
+  { path: 'pipes', component: PipesComponent },
+  { path: 'http', component: HttpComponent },
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-muted">{{cntr}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <input type="text" #city>
+      <input type="button" value="Go" (click)="goClicked(city.value)">
+    </div>
+  </div>
+  <div class="jumbotron">
+    <p>Lat - {{wthr?.coord?.lat}}, Lng - {{wthr?.coord?.lon}} </p>
+    <p> Weather - {{wthr?.weather[0]?.main}}</p>
+    <p> Info - {{wthr?.weather[0]?.description}}</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <input type="text" #num1 placeholder="Num1">
+      <input type="text" #op placeholder="Operation">
+      <input type="text" #num2 placeholder="Num2">
+      <p> {{rslt}}</p>
+      <input type="button" value="Calc" (click)="calc(num1.value, op.value, num2.value)">
+    </div>
+  </div>
+</div>

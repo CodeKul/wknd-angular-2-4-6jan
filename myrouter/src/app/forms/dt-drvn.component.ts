@@ -1,5 +1,8 @@
+import { Observable } from 'rxjs/Observable';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, NgForm, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl } from '@angular/forms';
+import { ValidationErrors } from '@angular/forms';
 
 @Component({
     selector: 'app-dt-drvn',
@@ -21,18 +24,25 @@ import { FormBuilder, NgForm, FormGroup, Validators } from '@angular/forms';
                         placeholder="Please input your Name" 
                         formControlName="nm" 
                         class="txt">
+                        <span *ngIf="!frm.controls.nm.valid"> Enter your name</span>
                     <input 
                         type="text"  
                         placeholder="Please input your mobile No" 
                         formControlName="mob" 
                         class="txt">
-
+                        <span *ngIf="!frm.controls.mob.valid"> Enter your mobile</span>
                     <input 
                         type="text" 
                         placeholder="Please input your Email" 
                         formControlName="eml" class="txt">
-                	 
-                    <input type="submit" value="submit" name="submit" class="txt2">
+                       
+                        <p>
+                        <span *ngIf="frm?.controls?.eml?.errors?.email">Invalid Email format</span>
+                        </p>  
+                        <p>
+                            <span *ngIf="frm?.controls?.eml?.errors?.myErr">{{frm?.controls?.eml?.errors?.myErr}}</span>
+                        </p>   
+                    <input *ngIf="frm.valid" type="submit" value="submit" name="submit" class="txt2">
                 </form>
             </div>
             </div>
@@ -103,9 +113,9 @@ import { FormBuilder, NgForm, FormGroup, Validators } from '@angular/forms';
 export class DtDrvnComponent implements OnInit {
 
     preObj = {
-        nm: 'and',
-        mob: '9897',
-        eml: 'android@gmail.com'
+        nm: '',
+        mob: '',
+        eml: ''
     }
     frm: FormGroup
     constructor(
@@ -115,15 +125,33 @@ export class DtDrvnComponent implements OnInit {
     ngOnInit() {
         this.frm = this.fb.group({
             nm: this.fb.control(this.preObj.nm, Validators.required),
-            mob: [this.preObj.mob, Validators.required],
+            mob: [this.preObj.mob, Validators.required, this.myAsyncVali],
             eml: [this.preObj.eml, Validators.compose(
-                [Validators.required, Validators.email]
+                [Validators.required, Validators.email, this.myVali]
             )]
         })
     }
 
     mySubmit() {
         console.log(this.frm)
+    }
+
+    myVali(ctrl: AbstractControl): ValidationErrors | null {
+        if (ctrl.value.charAt(0) == 'a') {
+            return null
+        }
+        return { myErr: 'Email should begin with a' }
+    }
+
+    myAsyncVali(ctrl: AbstractControl): Promise<ValidationErrors | null> | Observable<ValidationErrors | null> {
+        return new Promise(
+            (res, rej) => {
+                setTimeout(
+                    () => res(null), 
+                    1500
+                ) // emulation of some future acttivity
+            }
+        )
     }
 }
 

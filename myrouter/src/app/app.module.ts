@@ -11,6 +11,10 @@ import { AppComponent } from './app.component';
 import { FormsComponent } from './forms/forms.component';
 import { TmpDrvnComponent } from './forms/tmp-drvn.component';
 import { DtDrvnComponent } from './forms/dt-drvn.component';
+import { PipesComponent } from './pipes/pipes.component';
+import { JsAdvPipe } from './pipes/js-adv.pipe';
+import { HttpComponent } from './http/http.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -18,13 +22,17 @@ import { DtDrvnComponent } from './forms/dt-drvn.component';
     AppComponent,
     FormsComponent,
     TmpDrvnComponent,
-    DtDrvnComponent
+    DtDrvnComponent,
+    PipesComponent,
+    JsAdvPipe,
+    HttpComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpClientModule,
 
     LoginModule,
     DashModule,

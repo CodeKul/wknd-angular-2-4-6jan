@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1 class="text-muted"> Pipe </h1>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-12">
+      <p> Name is {{nm | uppercase}}</p>
+      <p> Name is {{nm | lowercase}}</p>
+
+      <p> Name is {{nm | uppercase | slice:2:4}}</p>
+      <p> Json {{ js | json}}</p>
+      <p> Json {{ js | jsAdv:nums}}</p>
+      <p> date {{ dt | date:"dd-MM-yyyy"}}</p>
+    </div>
+  </div>
+</div>
